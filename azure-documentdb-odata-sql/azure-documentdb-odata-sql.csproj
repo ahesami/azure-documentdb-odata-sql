@@ -2,13 +2,21 @@
 
   <PropertyGroup>
     <TargetFrameworks>net462;netstandard2.0</TargetFrameworks>
-		<debugType>full</debugType>
-  </PropertyGroup>
+		<AssemblyName>Microsoft.Azure.Documents.OData.Sql</AssemblyName>
+	</PropertyGroup>
 
 	<PropertyGroup>
 		<PlatformTarget>AnyCPU</PlatformTarget>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net462'">
+		<DocumentationFile>bin\Release\net462\Microsoft.Azure.Documents.OData.Sql.xml</DocumentationFile>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+		<DocumentationFile>bin\Release\netstandard2.0\Microsoft.Azure.Documents.OData.Sql.xml</DocumentationFile>
+	</PropertyGroup>
+	
 	<ItemGroup Condition="'$(TargetFramework)' == 'net462'">
 		<PackageReference Include="Microsoft.AspNet.OData" Version="6.1.0" />
 		<PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.3" />
